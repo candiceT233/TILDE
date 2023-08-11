@@ -11,10 +11,12 @@ To try out passage ranking with TILDEv2 on MS MARCO passage ranking task, you ne
 
 First, run the following command to index the whole MS MARCO expanded collection:
 
-```
+```python
 python3 indexingv2.py \
 --ckpt_path_or_name ielab/TILDEv2-TILDE200-exp \
 --collection_path path/to/collection/expanded/ 
+
+python3 indexingv2.py --ckpt_path_or_name ielab/TILDEv2-TILDE200-exp --collection_path ./data/collection/
 ```
 If you have a gpu with big memory, you can set `--batch_size` that suits your gpu the best.
 

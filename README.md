@@ -50,6 +50,9 @@ python3 indexing.py \
 --run_path ./data/runs/run.trec2019-bm25.res \
 --collection_path path/to/collection.tsv \
 --output_path ./data/index/TILDE
+
+python3 indexing.py --ckpt_path_or_name ielab/TILDE --run_path ./data/runs/run.trec2019-bm25.res \
+--collection_path ./data/collection/collection.tsv --output_path /mnt/ssd/mtang11/TILDE/index
 ```
 If you have a gpu with big memory, you can set `--batch_size` that suits your gpu the best.
 
@@ -57,11 +60,14 @@ This command will create a mini index in the folder `./data/index/TILDE` that st
 
 If you want to index the whole collection, simply run:
 
-```
+```python
 python3 indexing.py \
 --ckpt_path_or_name ielab/TILDE \
 --collection_path path/to/collection.tsv \
 --output_path ./data/index/TILDE
+
+
+python3 indexing.py --ckpt_path_or_name ielab/TILDE --collection_path ./data/collection/collection.tsv --output_path ./data/index/TILDE
 ```
 ### Re-rank BM25 results.
 After you got the index, now you can use TILDE to re-rank BM25 results.

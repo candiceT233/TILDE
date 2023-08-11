@@ -3,6 +3,10 @@ from transformers import BertLMHeadModel, BertTokenizer, DataCollatorWithPadding
 import torch
 import json
 import re
+
+import nltk
+nltk.download('stopwords')
+  
 from nltk.corpus import stopwords
 from tqdm import tqdm
 from torch.utils.data import Dataset
